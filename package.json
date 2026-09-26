@@ -1,0 +1,32 @@
+{
+  "name": "@saurav121/tiny-slugify",
+  "version": "1.3.0",
+  "description": "Tiny, dependency-light slugifier. Demo target for the Detonation Chamber.",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "tiny-slugify": "bin/tiny-slugify.js"
+  },
+  "files": [
+    "src",
+    "bin"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "chalk": "5.4.1",
+    "debug": "4.4.1"
+  },
+  "devDependencies": {
+    "@quarantine-lab/color-helper": "github:PRS121/color-helper#v1.2.3"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PRS121/tiny-slugify.git"
+  }
+}
