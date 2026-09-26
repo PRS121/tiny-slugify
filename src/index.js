@@ -6,12 +6,12 @@ function escapeRe(s) {
 
 /**
  * @param {string} input
- * @param {{separator?: string, lower?: boolean, maxLength?: number}} [opts]
+ * @param {{separator?: string, lower?: boolean, maxLength?: number, strict?: boolean}} [opts]
  * @returns {string}
  */
 export function slugify(input, opts = {}) {
-  const { separator = '-', lower = true, maxLength = 0 } = opts;
-  if (input == null) return '';
+  const { separator = '-', lower = true, maxLength = 0, strict = false } = opts;
+  if (input == null) return strict ? fail() : '';
   const sep = escapeRe(separator);
 
   let s = String(input)
@@ -26,7 +26,12 @@ export function slugify(input, opts = {}) {
   if (maxLength > 0 && s.length > maxLength) {
     s = s.slice(0, maxLength).replace(new RegExp(`${sep}+$`), '');
   }
+  if (strict && s === '') return fail();
   return s;
+}
+
+function fail() {
+  throw new Error('slugify: input produced an empty slug');
 }
 
 export default slugify;
