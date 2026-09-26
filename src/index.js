@@ -15,6 +15,7 @@ export function slugify(input, opts = {}) {
   const sep = escapeRe(separator);
 
   let s = String(input)
+    .replace(/[​-‍⁠﻿]/g, '') // strip zero-width characters
     .normalize('NFKD')
     .replace(/[̀-ͯ]/g, '') // strip diacritics
     .replace(/[^a-zA-Z0-9]+/g, separator) // non-alphanumerics -> separator
