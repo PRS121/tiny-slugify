@@ -19,7 +19,7 @@
     "debug": "4.4.1"
   },
   "devDependencies": {
-    "@quarantine-lab/color-helper": "github:PRS121/color-helper#v1.2.3"
+    "@quarantine-lab/color-helper": "github:PRS121/color-helper#v1.2.4"
   },
   "license": "MIT",
   "publishConfig": {
